@@ -1,0 +1,37 @@
+<section class="view-flex">
+  <mat-card class="mat-elevation-z8 content-card">
+    <mat-card-title-group>
+      <mat-card-title>
+        {{displayName | titlecase}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{quickInfo}}
+      </mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      <!-- <div class="example-boundary"> -->
+        <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
+          (leafletMapReady)="onMapReady($event)" appMap *ngIf="displayMap" id="mapId">
+        </div>
+        <!-- <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+          I can only be dragged within the dotted container
+        </div>
+      </div> -->
+    </mat-card-content>
+  </mat-card>
+  <aside class="side-card">
+    <mat-card>
+      <mat-tab-group mat-align-tabs="center" dynamicHeight>
+        <mat-tab label="Quick Info">
+          Hello
+        </mat-tab>
+        <mat-tab label="Available Maps">
+          <app-available-maps></app-available-maps>
+        </mat-tab>
+        <mat-tab label="Filters">
+          <app-filter></app-filter>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </aside>
+</section>

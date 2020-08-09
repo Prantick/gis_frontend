@@ -1,0 +1,23 @@
+.side-nav-container{
+	height: 92vh;
+}
+mat-drawer{
+	max-width: 365px;
+}
+mat-drawer-content{
+	padding: 12px;
+}
+.toolbar-spacer{
+    flex: 1 1 auto;
+}
+.menu-button{
+    margin-right: 8px;
+}
+mat-toolbar{
+    height: 8vh;
+    min-height: 8vh;
+    font-size: medium;
+}
+.icon-button{
+    margin-right: 12px;
+}

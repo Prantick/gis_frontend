@@ -1,0 +1,26 @@
+.drawer-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.drawer-content > div {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 5px;
+	align-items: center;
+}
+mat-icon {
+	margin-right: 20px;
+}
+mat-expansion-panel {
+	box-shadow: none !important;
+	padding: 0px !important;
+}
+.credits {
+	padding: 10px !important;
+	align-self: center;
+	margin-top: auto;
+	text-align: center;
+	color: darkgrey;
+	font-size: small;
+}

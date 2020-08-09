@@ -1,0 +1,13 @@
+.autocomplete-form {
+  min-width: 250px;
+  max-width: 350px;
+  font-size: medium;
+  display: flex;
+}
+.search-icon{
+  align-self: center;
+  padding: 2px;
+}
+.autocomplete-full-width {
+  width: 100%;
+}
