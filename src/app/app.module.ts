@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
-	declarations: [ AppComponent],
+	declarations: [ AppComponent ],
 	imports: [ BrowserModule, AppRoutingModule, BrowserAnimationsModule, DashboardModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]

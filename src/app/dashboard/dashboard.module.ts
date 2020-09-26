@@ -4,27 +4,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RequiredMaterialModule } from './material.module';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { MapComponent } from './map/map.component';
 import { SearchComponent } from './search/search.component';
 import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
-import { AvailableMapsComponent } from './available-maps/available-maps.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FilterComponent } from './filter/filter.component';
 
 import { DashboardService } from './dashboard.service';
 import { MapDirective } from './map/map.directive';
-
+import { FilterComparePipe } from './filter-compare.pipe';
+import { FilterTimelinePipe } from './filter-timeline.pipe';
 @NgModule({
 	declarations: [
 		MapComponent,
 		SearchComponent,
 		DashboardHomeComponent,
 		MapDirective,
-		AvailableMapsComponent,
 		SidenavComponent,
-		FilterComponent
+		FilterComponent,
+		FilterComparePipe,
+		FilterTimelinePipe
 	],
 	imports: [
 		CommonModule,
@@ -32,7 +32,6 @@ import { MapDirective } from './map/map.directive';
 		ReactiveFormsModule,
 		HttpClientModule,
 		RequiredMaterialModule,
-		DashboardRoutingModule,
 		LeafletModule
 	],
 	providers: [ DashboardService ],

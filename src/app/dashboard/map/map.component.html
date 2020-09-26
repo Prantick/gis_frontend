@@ -4,19 +4,27 @@
       <mat-card-title>
         {{displayName | titlecase}}
       </mat-card-title>
+      <app-search (sendValue)="searchValue($event)"></app-search>
       <mat-card-subtitle>
-        {{quickInfo}}
+        <mat-chip-list>
+          <mat-chip *ngIf="displayId" color="primary" selected>Map Id: {{displayId}}</mat-chip>
+          <mat-chip color="accent" *ngIf="filterValue && displayValue" selected>Value: {{displayValue}} %</mat-chip>
+        </mat-chip-list>
       </mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      <!-- <div class="example-boundary"> -->
+      <div class="boundary">
         <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
           (leafletMapReady)="onMapReady($event)" appMap *ngIf="displayMap" id="mapId">
         </div>
-        <!-- <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-          I can only be dragged within the dotted container
+        <div class="box" cdkDragBoundary=".boundary" cdkDrag *ngIf="grades && filterValue">
+          <div *ngFor="let g of grades; let i = index">
+            <div class="legend" [ngStyle]="{'backgroundColor': getColor(g + 1)}">
+            </div>
+            {{ grades[i] + '%'}} {{ grades[i + 1] ? '&ndash; ' + grades[i + 1] + '%' : "+"}} <br>
+          </div>
         </div>
-      </div> -->
+      </div>
     </mat-card-content>
   </mat-card>
   <aside class="side-card">
@@ -25,11 +33,8 @@
         <mat-tab label="Quick Info">
           Hello
         </mat-tab>
-        <mat-tab label="Available Maps">
-          <app-available-maps></app-available-maps>
-        </mat-tab>
         <mat-tab label="Filters">
-          <app-filter></app-filter>
+          <app-filter (filterState)="applyFilter($event)"></app-filter>
         </mat-tab>
       </mat-tab-group>
     </mat-card>

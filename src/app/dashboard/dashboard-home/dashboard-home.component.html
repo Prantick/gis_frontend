@@ -7,21 +7,6 @@
     </span>
     {{title | async}}
     <span class="toolbar-spacer"></span>
-    <button mat-icon-button class="icon-button" (click)="isSearchOverlayOpen = !isSearchOverlayOpen" type="button"
-      cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-      <mat-icon>search</mat-icon>
-    </button>
-    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger"
-      [cdkConnectedOverlayOpen]="isSearchOverlayOpen">
-      <mat-card class="mat-elevation-z8">
-        <app-search></app-search>
-      </mat-card>
-    </ng-template>
-    <button mat-icon-button class="icon-button">
-      <mat-icon matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()" matBadgeColor="accent">
-        {{notify}}</mat-icon>
-    </button>
-    <!-- <mat-icon>{{connectionStatus}}</mat-icon> -->
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate" color="warn" *ngIf="loading"></mat-progress-bar>
@@ -30,6 +15,6 @@
     <app-sidenav></app-sidenav>
   </mat-drawer>
   <mat-drawer-content>
-    <router-outlet></router-outlet>
+    <app-map (load)="changeLoadingStatus($event)"></app-map>
   </mat-drawer-content>
 </mat-drawer-container>

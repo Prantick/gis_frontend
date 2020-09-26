@@ -1,4 +1,4 @@
-export class CategoryModel {
-	c_id: string;
+export interface CategoryModel {
+	id: string;
 	name: string;
 }

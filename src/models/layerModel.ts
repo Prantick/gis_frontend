@@ -1,6 +1,6 @@
 import { Layer } from 'leaflet';
 
-export class LeafletLayersModel {
+export interface LeafletLayersModel {
 	enabled: boolean;
 	layer: Layer;
 }

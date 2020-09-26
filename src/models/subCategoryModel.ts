@@ -1,5 +1,4 @@
-export class SubCategoryModel {
-	sc_id: string;
+export interface SubCategoryModel {
+	id: string;
 	name: string;
-	category: string;
 }

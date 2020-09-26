@@ -11,3 +11,11 @@
 .autocomplete-full-width {
   width: 100%;
 }
+.mat-form-field{
+  margin-right: 8px;
+}
+@media screen and (max-width: 768px) {
+  .autocomplete-form{
+    font-size: small;
+  }
+}

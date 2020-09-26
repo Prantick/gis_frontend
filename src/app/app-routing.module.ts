@@ -5,8 +5,12 @@ import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-hom
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'home',
-		pathMatch: 'full'
+		component:DashboardHomeComponent
+	},
+	{
+		path:'**',
+		redirectTo:'/',
+		pathMatch:'full'
 	}
 ];
 

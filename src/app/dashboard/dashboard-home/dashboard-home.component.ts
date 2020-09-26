@@ -8,22 +8,13 @@ import { map } from 'rxjs/operators';
 	styleUrls: [ './dashboard-home.component.css' ]
 })
 export class DashboardHomeComponent implements OnInit {
-	toggle:boolean;
+	toggle: boolean;
 	title: any;
 	loading: boolean;
-	notify:string;
-	connectionStatus:string;
-	isSearchOverlayOpen:boolean;
-	hidden = false;
 	constructor(private breakpointObserver: BreakpointObserver) {}
 
 	ngOnInit(): void {
-		this.loading = false;
-		this.toggle = false;
-		this.isSearchOverlayOpen = false;
-
-		this.notify = "notifications_active";//[notifications,notifications_none]
-		this.connectionStatus = "wifi" //[wifi_off]
+		this.loading = true;
 		this.title = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
 			map(({ matches }) => {
 				if (matches) {
@@ -33,10 +24,10 @@ export class DashboardHomeComponent implements OnInit {
 			})
 		);
 	}
-	onToggleClick(){
+	onToggleClick() {
 		this.toggle = !this.toggle;
 	}
-	toggleBadgeVisibility() {
-    this.hidden = !this.hidden;
-  }
+	changeLoadingStatus(status:boolean){
+		this.loading= status;
+	}
 }

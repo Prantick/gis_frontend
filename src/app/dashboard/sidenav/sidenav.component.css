@@ -5,8 +5,7 @@
 }
 .drawer-content > div {
 	display: flex;
-	justify-content: space-between;
-	padding: 8px 5px;
+	padding: 20px 15px;
 	align-items: center;
 }
 mat-icon {
