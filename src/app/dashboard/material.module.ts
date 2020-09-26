@@ -12,6 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
 	exports: [
@@ -27,7 +28,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 		MatSidenavModule,
 		MatSnackBarModule,
 		MatTabsModule,
-		MatToolbarModule
+		MatToolbarModule,
+		DragDropModule
 	]
 })
 export class RequiredMaterialModule {}

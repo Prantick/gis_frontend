@@ -337,6 +337,7 @@ export class MapComponent implements OnInit {
 				}
 			});
 		});
+		
 	}
 
 	onMapReady(map: Map) {
