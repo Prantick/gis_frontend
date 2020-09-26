@@ -22,29 +22,23 @@ export class SearchComponent implements OnInit {
 	ngOnInit(): void {
 		this.manageIndexing();
 		this.initializeForms();
-		this.filteredOptions = this.searchByName
-			.get('enteredName')
-			.valueChanges.pipe(startWith(''), map((value) => this._filter(value)));
 	}
 	initializeForms() {
 		this.searchByName = this.formBuilder.group({
 			enteredName: [ '' ]
 		});
+		this.filteredOptions = this.searchByName
+			.get('enteredName')
+			.valueChanges.pipe(startWith(''), map((value) => this._filter(value)));
 	}
 	manageIndexing() {
-		let search = localStorage.getItem('search');
-		if (!search) {
-			this.indexService.indexedSearch().subscribe(
-				(data) => {
-					this.combinedValues = new Map(data);
-					localStorage.setItem('search', JSON.stringify(data));
-				},
-				(err) => console.log(err)
-			);
-		} else {
-			this.combinedValues = new Map(JSON.parse(search));
-		}
-		this.makeSearchEasy(this.combinedValues.values());
+		this.indexService.indexedSearch().subscribe(
+			(data) => {
+				this.combinedValues = new Map(data);
+				this.makeSearchEasy(this.combinedValues.values());
+			},
+			(err) => console.log(err)
+		);
 	}
 	makeSearchEasy(arr) {
 		let a = [ ...arr ];
@@ -54,10 +48,10 @@ export class SearchComponent implements OnInit {
 		let obj = {};
 
 		if (value[0] === '1') {
-			obj['type']='0';
-			obj['NAME']="Assam";
-			obj['map_id']="1";
-			obj['ID']='1';
+			obj['type'] = '0';
+			obj['NAME'] = 'Assam';
+			obj['map_id'] = '1';
+			obj['ID'] = '1';
 		} else {
 			let arr = value[0].split('.');
 			obj['DIST_NAME'] = this.mapValues.get(arr[0]);
