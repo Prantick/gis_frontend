@@ -39,8 +39,8 @@ export class FilterComponent implements OnInit{
 	onSubmit(){
 		let a = this.filterForm.get('timeS').value;
 		let b = this.filterForm.get('timeE').value;
-		this.filterForm.get('timeS').setValue(`${a}0101`);
-		this.filterForm.get('timeE').setValue(`${b}0101`);
+		this.filterForm.get('timeS').setValue(`${a}-01-01`);
+		this.filterForm.get('timeE').setValue(`${b}-01-01`);
 		this.filterState.emit(this.filterForm.value as FilterModel);
 		this.filterForm.get('timeS').setValue(`${a}`);
 		this.filterForm.get('timeE').setValue(`${b}`);

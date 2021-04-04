@@ -15,7 +15,7 @@
 	width: 33.34%;
 }
 .map {
-	height: 72vh;
+	height: 75vh;
 	padding: 0;
 	background: #fff;
 }
@@ -72,7 +72,7 @@
 		height: 60vh;
 	}
 	.map {
-		height: 40vh;
+		height: 43vh;
 	}
 	.side-card {
 		padding: 12px 0;
@@ -86,4 +86,12 @@
 		width:16px;
 		height: 16px;
 	}
+}
+.credits {
+	padding: 10px !important;
+	align-self: center;
+	/* margin-top: auto; */
+	text-align: center;
+	color: darkgrey;
+	font-size: small;
 }

@@ -30,13 +30,17 @@
   <aside class="side-card">
     <mat-card>
       <mat-tab-group mat-align-tabs="center" dynamicHeight>
-        <mat-tab label="Quick Info">
+        <!-- <mat-tab label="Quick Info">
           Hello
-        </mat-tab>
+        </mat-tab> -->
         <mat-tab label="Filters">
           <app-filter (filterState)="applyFilter($event)"></app-filter>
         </mat-tab>
       </mat-tab-group>
+      <div class="credits">
+        Developed and Designed by Gratia Technology Pvt. Ltd. <br>
+        &copy; All Rights Reserved 2020-2021 
+      </div>
     </mat-card>
   </aside>
 </section>

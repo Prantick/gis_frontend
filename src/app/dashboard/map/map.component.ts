@@ -206,11 +206,11 @@ export class MapComponent implements OnInit {
 			};
 		} else {
 			return {
-				fillColor: '#555',
+				fillColor: '#fdfce9',
 				weight: 2,
 				opacity: 1,
-				color: 'white',
-				dashArray: '3',
+				color: '#3f8cb5',
+				dashArray: '2',
 				fillOpacity: 0.7
 			};
 		}
@@ -262,8 +262,8 @@ export class MapComponent implements OnInit {
 			this.zone.run(() => {
 				layer.setStyle({
 					weight: 5,
-					color: '#666',
-					dashArray: '3',
+					color: '#b53f51',
+					dashArray: '1',
 					fillOpacity: 0.7
 				});
 				layer.bringToFront();

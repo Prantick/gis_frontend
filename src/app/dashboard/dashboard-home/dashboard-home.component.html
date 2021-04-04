@@ -1,20 +1,23 @@
 <mat-toolbar color="primary" class="mat-elevation-z8">
   <mat-toolbar-row>
     <span>
-      <button mat-icon-button (click)="onToggleClick()" class="menu-button">
+      <!-- <button mat-icon-button (click)="onToggleClick()" class="menu-button">
         <mat-icon>menu</mat-icon>
-      </button>
+      </button> -->
     </span>
     {{title | async}}
     <span class="toolbar-spacer"></span>
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate" color="warn" *ngIf="loading"></mat-progress-bar>
-<mat-drawer-container class="side-nav-container" [hasBackdrop]="false">
+<!-- <mat-drawer-container class="side-nav-container" [hasBackdrop]="false">
   <mat-drawer [(opened)]="toggle" [mode]="'over'">
     <app-sidenav></app-sidenav>
   </mat-drawer>
-  <mat-drawer-content>
-    <app-map (load)="changeLoadingStatus($event)"></app-map>
-  </mat-drawer-content>
-</mat-drawer-container>
+  <mat-drawer-content> -->
+    <div class="map-view">
+      <app-map (load)="changeLoadingStatus($event)"></app-map>
+    </div>
+    
+  <!-- </mat-drawer-content>
+</mat-drawer-container> -->

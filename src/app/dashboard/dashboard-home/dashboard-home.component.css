@@ -21,3 +21,6 @@ mat-toolbar{
 .icon-button{
     margin-right: 12px;
 }
+.map-view{
+    padding: 10px;
+}
